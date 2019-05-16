@@ -1,5 +1,5 @@
 import * as request from 'request-promise';
-import * as qs from 'querystring';
+import * as qs from 'qs';
 
 import Config from './config';
 import BitrixAuth from './auth';
@@ -24,11 +24,11 @@ export class Bitrix24{
         }
 
         if(!init.config.mode || init.config.mode == "api"){
-            this.auth = new BitrixAuth(init);        
+            this.auth = new BitrixAuth(init);
         }
-        
+
     }
-    
+
     /**
      * Call Bitrix rest API
      * @param {string} method - Method that will be called
@@ -37,7 +37,7 @@ export class Bitrix24{
      */
     async callMethod(method:string, param: any = {}){
         let url:string;
-        
+
         if(this.init.config.mode == "api"){
             //FIX ME: This implementation always refresh token before request, please fix it
             const token = await this.auth.refreshToken();

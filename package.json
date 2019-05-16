@@ -28,8 +28,10 @@
     "nock": "^9.0.14"
   },
   "dependencies": {
+    "@types/qs": "^6.5.3",
     "@types/request-promise": "^4.1.36",
     "dotenv": "^4.0.0",
+    "qs": "^6.7.0",
     "request": "^2.81.0",
     "request-promise": "^4.2.1"
   }
